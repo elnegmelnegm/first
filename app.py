@@ -38,9 +38,9 @@ with col2:
 ########sample
 with st.container():
   st.subheader("The percentage of assay")
-  standard_concentration = st.number_input("Concentration of standard (µg/mL)", key="standard_concentration", default="")
-  sample_concentration = st.number_input("Concentration of sample (µg/mL)", key="sample_concentration", default="")
-  standard_purity = st.number_input("Purity of standard (%)", key="purity", default="")
+  standard_concentration = float(st.number_input("Concentration of standard (µg/mL)", key="standard_concentration", default=""))
+  sample_concentration = float(st.number_input("Concentration of sample (µg/mL)", key="sample_concentration", default=""))
+  standard_purity = float(st.number_input("Purity of standard (%)", key="purity", default=""))
   assay = average_s*standard_purity*standard_concentration/(average*sample_concentration)
   assay2 = round(assay,2)
   st.write("Assay:", assay2, "% ")
