@@ -13,7 +13,7 @@ with col1:
   st.subheader("Standard")
   standard_values_st = []
   for i in range(5):
-    standard_values_st.append(st.number_input("Area of standard", key="standard_value_{}".format(i), default=""))
+    standard_values_st.append(float(st.number_input("Area of standard", key="standard_value_{}".format(i), default="")))
 
 # Calculate average and standard deviation
   average = round(np.mean(standard_values_st),2)
@@ -28,7 +28,7 @@ with col2:
   st.subheader("Sample")
   standard_values_s = []
   for i in range(3):
-    standard_values_s.append(st.number_input("Area of sample", key="standard_value_sample_{}".format(i), default=""))
+    standard_values_s.append(float(st.number_input("Area of sample", key="standard_value_sample_{}".format(i), default="")))
 
 # Calculate average and standard deviation
   average_s = round(np.mean(standard_values_s),2)
