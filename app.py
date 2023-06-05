@@ -13,7 +13,7 @@ with col1:
   st.subheader("Standard")
   standard_values_st = []
   for i in range(5):
-    value = st.number_input("Area of standard", key="standard_value_st{}".format(i))
+    standard_values_st.append(st.number_input("Area of sample", key="standard_value_standard{}".format(i)))
     
  
  # Calculate average and standard deviation
