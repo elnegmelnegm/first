@@ -13,7 +13,7 @@ with col1:
   st.subheader("Standard")
   standard_values_st = []
   for i in range(5):
-    standard_values_st.append(st.number_input("Area of standard", key="standard_value_{}".format(i)))
+    standard_values_st.append(st.number_input("Area of standard", key="standard_value_{}".format(i), default=""))
 
 # Calculate average and standard deviation
   average = round(np.mean(standard_values_st),2)
@@ -28,7 +28,7 @@ with col2:
   st.subheader("Sample")
   standard_values_s = []
   for i in range(3):
-    standard_values_s.append(st.number_input("Area of sample", key="standard_value_sample_{}".format(i)))
+    standard_values_s.append(st.number_input("Area of sample", key="standard_value_sample_{}".format(i), default=""))
 
 # Calculate average and standard deviation
   average_s = round(np.mean(standard_values_s),2)
@@ -38,9 +38,9 @@ with col2:
 ########sample
 with st.container():
   st.subheader("The percentage of assay")
-  standard_concentration = st.number_input("Concentration of standard (µg/mL)", key="standard_concentration")
-  sample_concentration = st.number_input("Concentration of sample (µg/mL)", key="sample_concentration")
-  standard_purity = st.number_input("Purity of standard (%)", key="purity")
+  standard_concentration = st.number_input("Concentration of standard (µg/mL)", key="standard_concentration", default="")
+  sample_concentration = st.number_input("Concentration of sample (µg/mL)", key="sample_concentration", default="")
+  standard_purity = st.number_input("Purity of standard (%)", key="purity", default="")
   assay = average_s*standard_purity*standard_concentration/(average*sample_concentration)
   assay2 = round(assay,2)
   st.write("Assay:", assay2, "% ")
