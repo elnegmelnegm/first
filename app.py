@@ -11,38 +11,34 @@ with st.container():
 col1, col2 = st.columns([1,1])
 
 with col1:
-st.subheader("Standard")
-standard_values_st = []
-for i in range(5):
-standard_values_st.append(float(st.number_input("Area of standard", key="standard_value_{}".format(i), default="")))
-average = round(np.mean(standard_values_st),2)
-standard_deviation = round(np.std(standard_values_st),2)
-RSD = round(standard_deviation*100/average,2)
-
-
-st.write("Average of standard:", average)
-st.write("Standard deviation :", standard_deviation)
-st.write("Relative standard deviation :", RSD)
+  st.subheader("Standard")
+  standard_values_st = []
+  for i in range(5):
+    standard_values_st.append(float(st.number_input("Area of standard", key="standard_value_{}".format(i), default="")))
+  average = round(np.mean(standard_values_st),2)
+  standard_deviation = round(np.std(standard_values_st),2)
+  RSD = round(standard_deviation*100/average,2)
+  st.write("Average of standard:", average)
+  st.write("Standard deviation :", standard_deviation)
+  st.write("Relative standard deviation :", RSD)
 
 with col2:
-st.subheader("Sample")
-standard_values_s = []
-for i in range(3):
-standard_values_s.append(float(st.number_input("Area of sample", key="standard_value_sample_{}".format(i), default="")))
-
-
-average_s = round(np.mean(standard_values_s),2)
-st.write("Average of sample:", average_s)
+  st.subheader("Sample")
+  standard_values_s = []
+  for i in range(3):
+    standard_values_s.append(float(st.number_input("Area of sample", key="standard_value_sample_{}".format(i), default="")))
+  average_s = round(np.mean(standard_values_s),2)
+  st.write("Average of sample:", average_s)
 
 ########sample
 with st.container():
-st.subheader("The percentage of assay")
-standard_concentration = float(st.number_input("Concentration of standard (µg/mL)", key="standard_concentration", default=""))
-sample_concentration = float(st.number_input("Concentration of sample (µg/mL)", key="sample_concentration", default=""))
-standard_purity = float(st.number_input("Purity of standard (%)", key="purity", default=""))
-assay = average_sstandard_puritystandard_concentration/(average*sample_concentration)
-assay2 = round(assay,2)
-st.write("Assay:", assay2, "% ")
+  st.subheader("The percentage of assay")
+  standard_concentration = float(st.number_input("Concentration of standard (µg/mL)", key="standard_concentration", default=""))
+  sample_concentration = float(st.number_input("Concentration of sample (µg/mL)", key="sample_concentration", default=""))
+  standard_purity = float(st.number_input("Purity of standard (%)", key="purity", default=""))
+  assay = average_sstandard_puritystandard_concentration/(average*sample_concentration)
+  assay2 = round(assay,2)
+  st.write("Assay:", assay2, "% ")
 
 
 
